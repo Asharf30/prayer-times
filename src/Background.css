@@ -1,0 +1,239 @@
+/* ============================================
+   خلفية متحركة بطابع ديني هادئ
+   ============================================ */
+
+/* الحاوية الأساسية للخلفية */
+.animated-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: linear-gradient(
+    135deg,
+    #0a0e27 0%,
+    #1a1040 40%,
+    #0d1b3e 70%,
+    #050a18 100%
+  );
+}
+
+/* ===== طبقة النجوم الصغيرة ===== */
+.stars-small,
+.stars-medium,
+.stars-large {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.stars-small {
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 25% 50%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 40% 10%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 55% 80%, rgba(255, 255, 255, 0.7), transparent),
+    radial-gradient(1px 1px at 70% 35%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 85% 60%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 15% 75%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 90% 15%, rgba(255, 255, 255, 0.6), transparent),
+    radial-gradient(1px 1px at 50% 45%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 33% 90%, rgba(255, 255, 255, 0.7), transparent);
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+.stars-medium {
+  background-image:
+    radial-gradient(
+      1.5px 1.5px at 20% 30%,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    ),
+    radial-gradient(
+      1.5px 1.5px at 60% 70%,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    radial-gradient(
+      1.5px 1.5px at 80% 20%,
+      rgba(255, 255, 255, 0.7),
+      transparent
+    ),
+    radial-gradient(
+      1.5px 1.5px at 45% 55%,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    radial-gradient(
+      1.5px 1.5px at 10% 85%,
+      rgba(255, 255, 255, 0.6),
+      transparent
+    ),
+    radial-gradient(
+      1.5px 1.5px at 75% 45%,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
+  animation: twinkle 6s ease-in-out 1s infinite alternate;
+}
+
+.stars-large {
+  background-image:
+    radial-gradient(2px 2px at 30% 40%, rgba(200, 220, 255, 0.9), transparent),
+    radial-gradient(2px 2px at 70% 25%, rgba(200, 220, 255, 0.7), transparent),
+    radial-gradient(2px 2px at 50% 75%, rgba(200, 220, 255, 0.8), transparent),
+    radial-gradient(2px 2px at 15% 60%, rgba(200, 220, 255, 0.6), transparent);
+  animation: twinkle 5s ease-in-out 2s infinite alternate;
+}
+
+/* ===== الهلال ===== */
+.crescent {
+  position: absolute;
+  top: 8%;
+  right: 3%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow:
+    inset -18px -2px 0 0 #f5e6a3,
+    0 0 30px rgba(245, 230, 163, 0.3),
+    0 0 60px rgba(245, 230, 163, 0.15);
+  animation:
+    crescentGlow 6s ease-in-out infinite alternate,
+    crescentFloat 8s ease-in-out infinite;
+  opacity: 0.85;
+}
+
+/* ===== توهج دائري خفيف ===== */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.12;
+  animation: orbFloat 12s ease-in-out infinite alternate;
+}
+
+.glow-orb--1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #3b5998, transparent);
+  top: 20%;
+  left: -5%;
+}
+
+.glow-orb--2 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #6b48c8, transparent);
+  bottom: 15%;
+  right: -3%;
+  animation-delay: 3s;
+  animation-direction: alternate-reverse;
+}
+
+.glow-orb--3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #c8a94e, transparent);
+  top: 50%;
+  left: 40%;
+  opacity: 0.07;
+  animation-delay: 5s;
+}
+
+/* ===== Animations ===== */
+@keyframes twinkle {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes crescentGlow {
+  0% {
+    box-shadow:
+      inset -18px -2px 0 0 #f5e6a3,
+      0 0 30px rgba(245, 230, 163, 0.3),
+      0 0 60px rgba(245, 230, 163, 0.15);
+  }
+  100% {
+    box-shadow:
+      inset -18px -2px 0 0 #f5e6a3,
+      0 0 50px rgba(245, 230, 163, 0.5),
+      0 0 90px rgba(245, 230, 163, 0.25);
+  }
+}
+
+@keyframes crescentFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes orbFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(30px, -20px) scale(1.15);
+  }
+}
+
+/* ===== Responsive: هلال أصغر على الموبايل ===== */
+@media (max-width: 600px) {
+  .crescent {
+    width: 50px;
+    height: 50px;
+    top: 15%;
+    right: 6%;
+    box-shadow:
+      inset -12px -2px 0 0 #f5e6a3,
+      0 0 20px rgba(245, 230, 163, 0.3);
+  }
+  .glow-orb--1 {
+    width: 180px;
+    height: 180px;
+  }
+  .glow-orb--2 {
+    width: 150px;
+    height: 150px;
+  }
+  .glow-orb--3 {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ===== Responsive: تابلت ===== */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .crescent {
+    width: 65px;
+    height: 65px;
+    top: 6%;
+    right: 3%;
+    box-shadow:
+      inset -15px -2px 0 0 #f5e6a3,
+      0 0 25px rgba(245, 230, 163, 0.3),
+      0 0 50px rgba(245, 230, 163, 0.15);
+  }
+  .glow-orb--1 {
+    width: 240px;
+    height: 240px;
+  }
+  .glow-orb--2 {
+    width: 200px;
+    height: 200px;
+  }
+  .glow-orb--3 {
+    width: 160px;
+    height: 160px;
+  }
+}

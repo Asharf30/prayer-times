@@ -1,0 +1,45 @@
+html {
+  direction: rtl;
+}
+
+/* ===== Label ===== */
+.MuiInputLabel-root {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: #fff !important;
+}
+
+/* ===== Select Text ===== */
+.MuiSelect-select {
+  color: #fff !important;
+}
+
+/* ===== Outlined Border ===== */
+.MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+
+/* ===== Arrow Icon ===== */
+.MuiSelect-icon {
+  color: #fff !important;
+}
+
+/* ===== Dropdown Menu ===== */
+.MuiPaper-root {
+  background-color: #1e293b !important;
+  color: #fff !important;
+}
+
+.MuiMenuItem-root:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
